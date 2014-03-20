@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">Zippy Notes</string>
-
+    <string name="db_app_key">hpacfu0qyv88p3b</string>
 </resources>
