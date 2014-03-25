@@ -18,6 +18,14 @@ public class EditTextNoteActivity extends DropboxActivity {
         setContentView(R.layout.activity_edit_text_note);
 
         path = new DbxPath(getIntent().getStringExtra("path"));
+        setTitle(stripExtension("txt", path.getName()));
+    }
+
+    private static String stripExtension(String extension, String filename) {
+        extension = "." + extension;
+        if (filename.endsWith(extension))
+            return filename.substring(0, filename.length() - extension.length());
+        return filename;
     }
 
     private EditText getEditText() {
@@ -50,7 +58,7 @@ public class EditTextNoteActivity extends DropboxActivity {
                 file.close();
         }
 
-        return "apples";  // error
+        return "";  // error
     }
 
     @Override
